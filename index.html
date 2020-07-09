@@ -4,8 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Главная</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/calendar.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 </head>
 <body>
 	<nav class="fixed-top">
@@ -13,6 +15,7 @@
 			<div class="row">
 				<button type="button" id="list-emp" class="nav-item col col-md-3 btn btn-dark btn-sm active">Список сотрудников</button>
 				<button type="button" id="add-emp" class="nav-item col col-md-3 btn btn-dark btn-sm">Добавить сотрудника</button>
+				<button type="button" id="calendar-button" class="nav-item col col-md-3 btn btn-dark btn-sm">Календарь</button>
 			</div>
 		</div>
 	</nav>
@@ -20,12 +23,13 @@
 	<section class="box-of-windows">
 
 		<!-- Первое окно -->
-		<div class="containet-fluid">
+		<div class="container-fluid">
 			<div id="list-of-emp" class="list-of-employee row">
-				<div class="list-card card col-md-10 col-sm-12 align-self-center">
+				<div class="list-card card col-md-6 col-sm-12 align-self-center">
 					<div class="card-header">
 						<h4 class="card-title text-center">Список сотрудников:</h4>
-						<input type="text" id="search_emp" class="form-control" placeholder="Поиск сотрудника"></div>
+						<input type="text" id="search_emp" class="form-control" placeholder="Поиск сотрудника">
+					</div>
 					<div class="card-body list-items-class">
 						<ul class="list-group">
 							<li class="list-group-item">Cras justo odio</li>
@@ -82,12 +86,42 @@
 			</div>
 		</div>
 
+		<!-- Третье окно -->
+		<div class="container-fluid">
+			<div id="calendar-window" class="calendar row d-none">
+				<div class="calendar-window card text-center col-md-9 col-sm-12 align-self-center">
+					<div class="month card-header d-flex flex-row justify-content-between align-items-center">
+						<i class="fas fa-angle-left prev"></i>
+						<div class="date">
+							<h4 class="card-title"></h4>
+							<p></p>
+						</div>
+						<i class="fas fa-angle-right next"></i>
+					</div>
+					<div class="week-days">
+						<div class="border-secondary border">Пн</div>
+						<div class="border-secondary border">Вт</div>
+						<div class="border-secondary border">Ср</div>
+						<div class="border-secondary border">Чт</div>
+						<div class="border-secondary border">Пт</div>
+						<div class="border-secondary border">Сб</div>
+						<div class="border-secondary border">Вс</div>
+					</div>
+					<div class="days">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Конец календаря -->
+
 	</section>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-	<script src="js/script.js"></script>
+	<script src="js/select-window-script.js"></script>
+	<script src="js/calendar-script.js"></script>
 </body>
 </html>
 

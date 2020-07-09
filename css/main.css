@@ -17,12 +17,12 @@ nav {
 	background-color: #494d5f;
 }
 
-.list-of-employee,  .add-new-employee {
+.list-of-employee,  .add-new-employee, .calendar {
 	height: 100vh;
 	width: 100vw;
 }
 
-.list-card {
+.list-card, .calendar-window {
 	max-height: 80vh;
 }
 
@@ -30,11 +30,11 @@ nav {
 	background-color: #e5eaf5!important;
 }
 
-.list-items-class {
+.list-items-class, .calendar-window {
 	overflow-y: auto; 
 }
 
-.add-card-form, .list-card {
+.add-card-form, .list-card, .calendar-window {
 	margin: 0 auto;
 	background-color: #e5eaf5!important;
 }
