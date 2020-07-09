@@ -1,19 +1,16 @@
-const date = new Date();
+let date = new Date();
+
+let options = {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  weekday: 'long',
+};
 
 const renderCalendar = () => {
 	const monthDays = document.querySelector('.days');
 
-	const firstDayIndexWith0EqualSunday = date.getDay();
-
-	let firstDayIndex;
-
-
-	if (firstDayIndexWith0EqualSunday == 0) {
-		firstDayIndex = 6;
-	} else {
-		firstDayIndex = firstDayIndexWith0EqualSunday - 1;
-	}
-
+	const firstDayIndex = new Date(date.getFullYear(), date.getMonth(), 0).getDay();
 
 	const lastDayIndex = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDay();
 
@@ -39,17 +36,17 @@ const renderCalendar = () => {
 	];
 
 	document.querySelector('.date h4').innerHTML = months[date.getMonth()];
-	document.querySelector('.date p').innerHTML = date.toDateString();
+	document.querySelector('.date p').innerHTML = date.toLocaleString("ru", options);
 
 	let days = "";
 
-	for (let x = firstDayIndex - 1; x > 0; x--) {
+	for (let x = firstDayIndex ; x > 0; x--) {
 		days += `<div class="prev-date border">${prevLastDay - x + 1}</div>`
 	}
 
 	for (let i = 1; i <= lastDay; i++) {
 		if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
-			days += `<div class="today border">${i}</div>`
+			days += `<div class="today border">${i}</div>`;
 		} else {
 			days += `<div class="border">${i}</div>`;
 		}
